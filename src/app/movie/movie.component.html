@@ -1,0 +1,10 @@
+<ul>
+  <li *ngFor='let movie of movies'>
+    <h1>{{movie.title}}</h1>
+    <p>{{movie.releaseDate | date:'y' }}</p>
+    <div>
+      <label>Titre :</label>
+      <input [(ngModel)]="movie.title" placeholder="titre"/>
+    </div>
+  </li>
+</ul>
