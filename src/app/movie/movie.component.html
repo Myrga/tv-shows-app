@@ -1,5 +1,5 @@
 <ul>
-  <li *ngFor='let movie of movies'>
+  <li *ngFor='let movie of movies' (click)="getDetails(movie)">
     <h1>{{movie.title}}</h1>
     <p>{{movie.releaseDate | date:'y' }}</p>
     <div>
@@ -8,3 +8,14 @@
     </div>
   </li>
 </ul>
+
+<div *ngIf="clickedMovie != null">
+  <h1>Détails du film {{ clickedMovie.title }}</h1>
+  <p>{{clickedMovie.releaseDate | date:'y' }}</p>
+
+  <ul>
+    <li *ngFor="let position of clickedMovie.positions">
+      <h2>{{ position.person.firstName }}  {{ position.person.firstName }}</h2>
+    </li>
+  </ul>
+</div>
